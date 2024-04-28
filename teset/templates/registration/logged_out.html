@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <!-- <form action="" method="post">
+  {% csrf_token %}
+  <p>Logged out!</p>
+  <a href="{% url 'logount'%}">Click here to login again.</a> -->
+  <form action="{% url 'logout' %}" method="post">
+    {% csrf_token %} #csrf_token is very important to have as this is POST request
+    <p>Logged out!</p>
+    <a href="{% url 'login'%}">Click here to login again.</a>
+  </form>
+{% endblock %}
+
